@@ -117,7 +117,7 @@ function climbing(chef, oboseala) {
 }
 console.log(climbing(50, 40))
 
-// with arrow function
+// with arrow function and ternary operator
 const climbing2 = (chef, oboseala) => (chef >= 50 && oboseala <60) ? 'Azi merg la sala' : 'Azi stau acasa'
 console.log(climbing2(50, 61));
 
@@ -175,6 +175,11 @@ function sumAll(arr) {
 
 console.log(sumAll([5, 10]));
 
+
+age = 17;
+let welcome = (age < 18) ? () => console.log("hello") : () => console.log('greetings');
+welcome();
+
 // We'll pass you an array of two numbers. Return the sum of those two numbers, plus the sum of all the numbers between them. The lowest number will not always come first.
 
 //Anonymous function with immediate execution
@@ -182,7 +187,13 @@ console.log(sumAll([5, 10]));
     console.log('Invoke function immediately.');
 })();
 
-let person = {
+// anonymous functions as arguments to another function
+setTimeout(function () {
+    console.log("Welcome");
+    }, 2000);
+
+
+const person = {
     firstName: 'John',
     lastName: 'Doe'
 };
@@ -191,6 +202,11 @@ let person = {
     console.log(person.firstName + ' ' + person.lastName);
 })(person);  //motivul pentru care as pune person ca argument al functiei. mai ales ca nu schimba output-ul
 
+let anonymousF = () => console.log(person.firstName + ' ' + person.lastName);
+anonymousF();
 
-let show = () => console.log('Anonymous arrow function');
-console.log(show);
+( () => { console.log(person.firstName + ' ' + person.lastName); })();
+
+
+
+
