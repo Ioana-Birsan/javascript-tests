@@ -180,8 +180,6 @@ age = 17;
 let welcome = (age < 18) ? () => console.log("hello") : () => console.log('greetings');
 welcome();
 
-// We'll pass you an array of two numbers. Return the sum of those two numbers, plus the sum of all the numbers between them. The lowest number will not always come first.
-
 //Anonymous function with immediate execution
 (function() {
     console.log('Invoke function immediately.');
@@ -208,5 +206,38 @@ anonymousF();
 ( () => { console.log(person.firstName + ' ' + person.lastName); })();
 
 
+const calcAge = function(birthYear) {
+    return 2037 - birthYear;
+}
+
+const age1 =  calcAge(1997);
+console.log(age);
+
+const calcAge2 = birthYear => 2037 - birthYear;
+const age2 = calcAge2(1994);
+console.log(age2);
 
 
+// arrow functions with multiple parameters and lines of code
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age;
+    return `${firstName} retires in ${retirement} years`;
+}
+
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+
+
+//
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces =  cutFruitPieces(oranges);
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+    return juice;
+}
+
+console.log(fruitProcessor(2,3));
