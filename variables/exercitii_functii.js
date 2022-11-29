@@ -105,3 +105,15 @@ const avgKoalas2 = avgTeam(23, 34, 27);
 
 checkWinner(avgDolphins2, avgKoalas2);
 
+
+
+// closure functions - these have access to outer functions variable, even after the outer function has returned => you can call inner function later in the program
+function showName (firstName, lastName) { 
+const nameIntro = "Your name is ";
+function makeFullName () {
+    return nameIntro + firstName + ' ' + lastName;
+}
+return makeFullName ();
+}
+
+console.log(showName('Michael', 'Jackson'));
